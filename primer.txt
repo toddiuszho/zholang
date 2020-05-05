@@ -1,0 +1,66 @@
+// line comment
+
+/--
+   block comment
+   across lines
+--/
+
+section = [[
+  content here
+]]
+
+-arbitrary-key value
+
+expected-key = value
+
+expected-sentence-with-legal-characters = hey, now
+
+expeted-sentence-with-illegal-characters = 'No one expects the Spanish Inquisition!'
+
+expected-key-with-whitespace-in-value = 'I did this!'
+
+boolean enforce-that-type = true
+
+history.empire also-expected-with-type = [[
+  name = 'Ottoman'
+  hey-day = '1400 AD'
+  continent-code = continents.asia 
+]]
+
+-endearment = guy
+string -interpolated-value = 'It\'s over there, my `endearment`'
+
+
+
+quotethis = 'ok, I will'
+
+number[] -my-array = [55, 77]
+string[] -names = [bob, joe]
+[] -dont-care = [108.5, 'fm']
+-implied-array = [power, to, the, people]
+
+-copy-array-element-to-this-key = my-array[1]
+
+[string, history.empire] -map-names-to-ages = [-lisa = 44, -tommy = 81].[string, number]
+
+[string, history.empire] -nested-map = [
+  -greece = [
+    name = 'Ancient Greece'
+    hey-day = 'BC 400]
+    continent-code = history.continents.europe
+  ],
+  -rome = [
+    name = 'Ancient Rome'
+    hey-day = '44 AD]
+    continent = history.continents.europe
+  ]
+]
+
+types-with-shorthand-or-extension[
+  -array = '[element-type]',
+  -boolean = nil,
+  -map = '[key-type, value-type]',
+  -nil = nil,
+  -number = nil,
+  -string = nil,
+]
